@@ -1,10 +1,5 @@
-/* ========================================
-   Day & Night - Personal Portfolio
-   DevSoc UNSW Application
-   ======================================== */
 
 :root {
-  /* Day mode - Phoenix Suns (sun logo) */
   --bg-primary: #fdf9f4;
   --bg-secondary: #fff8f0;
   --bg-card: #ffffff;
@@ -40,7 +35,6 @@ body {
   min-height: 100vh;
 }
 
-/* Hero Section */
 .hero {
   position: relative;
   min-height: 38vh;
@@ -50,7 +44,6 @@ body {
   overflow: hidden;
 }
 
-/* Phoenix Suns hero background */
 .hero-bg-suns {
   position: absolute;
   inset: 0;

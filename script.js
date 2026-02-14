@@ -1,6 +1,3 @@
-/**
- * DevSoc UNSW Application
- */
 
 (function () {
   'use strict';
