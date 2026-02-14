@@ -4,38 +4,39 @@
    ======================================== */
 
 :root {
-  /* Day mode (default) - subtle basketball warmth */
-  --bg-primary: #faf8f5;
-  --bg-secondary: #fff9f5;
+  /* Day mode - Phoenix Suns inspired (sun logo) */
+  --bg-primary: #fdf9f4;
+  --bg-secondary: #fff8f0;
   --bg-card: #ffffff;
-  --text-primary: #2d2a26;
-  --text-secondary: #5c564d;
-  --text-muted: #8a8379;
-  --accent: #e85d04;
-  --accent-soft: #ffe5d9;
-  --border: rgba(45, 42, 38, 0.08);
-  --shadow: rgba(45, 42, 38, 0.06);
-  --shadow-hover: rgba(45, 42, 38, 0.12);
-  --sky-start: #87ceeb;
-  --sky-mid: #e0f4ff;
-  --sky-end: #fff5e6;
+  --text-primary: #1d1160;
+  --text-secondary: #4a3d6b;
+  --text-muted: #6b5d85;
+  --accent: #e56020;
+  --accent-soft: #ffe8dd;
+  --border: rgba(29, 17, 96, 0.08);
+  --shadow: rgba(29, 17, 96, 0.06);
+  --shadow-hover: rgba(29, 17, 96, 0.12);
+  --sky-start: #ffd89b;
+  --sky-mid: #ffe8c5;
+  --sky-end: #fff5e8;
 }
 
 body.night-mode {
-  --bg-primary: #0f0e17;
-  --bg-secondary: #18162b;
-  --bg-card: #1e1c2e;
-  --text-primary: #e8e4df;
-  --text-secondary: #b8b2a8;
-  --text-muted: #7a756d;
-  --accent: #d4a052;
-  --accent-soft: #2d2a3d;
-  --border: rgba(232, 228, 223, 0.08);
-  --shadow: rgba(0, 0, 0, 0.3);
-  --shadow-hover: rgba(0, 0, 0, 0.5);
-  --sky-start: #0d0d1a;
-  --sky-mid: #1a1525;
-  --sky-end: #0f0e17;
+  /* Night mode - New York Knicks inspired */
+  --bg-primary: #0a1628;
+  --bg-secondary: #0d1f38;
+  --bg-card: #12263d;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b8c9dd;
+  --text-muted: #7a94b0;
+  --accent: #f58426;
+  --accent-soft: #1d3a5c;
+  --border: rgba(245, 132, 38, 0.15);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(245, 132, 38, 0.2);
+  --sky-start: #0a1628;
+  --sky-mid: #12263d;
+  --sky-end: #0d1f38;
 }
 
 * {
@@ -408,6 +409,12 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.players-grid-single {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .player-card {
