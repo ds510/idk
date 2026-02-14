@@ -21,24 +21,6 @@
   --sky-end: #fff5e8;
 }
 
-body.night-mode {
-  /* Night mode - New York Knicks */
-  --bg-primary: #0a1628;
-  --bg-secondary: #0d1f38;
-  --bg-card: #12263d;
-  --text-primary: #f5f5f5;
-  --text-secondary: #b8c9dd;
-  --text-muted: #7a94b0;
-  --accent: #f58426;
-  --accent-soft: #1d3a5c;
-  --border: rgba(245, 132, 38, 0.15);
-  --shadow: rgba(0, 0, 0, 0.4);
-  --shadow-hover: rgba(245, 132, 38, 0.2);
-  --sky-start: #0a1628;
-  --sky-mid: #12263d;
-  --sky-end: #0d1f38;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -58,47 +40,6 @@ body {
   min-height: 100vh;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 1000;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  background: var(--bg-card);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 20px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 24px var(--shadow-hover);
-}
-
-.sun-icon {
-  display: block;
-}
-
-.moon-icon {
-  display: none;
-}
-
-.night-mode .sun-icon {
-  display: none;
-}
-
-.night-mode .moon-icon {
-  display: block;
-}
-
 /* Hero Section */
 .hero {
   position: relative;
@@ -109,76 +50,25 @@ body {
   overflow: hidden;
 }
 
-/* Team logo backgrounds */
-.team-logo {
+/* Phoenix Suns hero background */
+.hero-bg-suns {
   position: absolute;
   inset: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.12;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-
-.team-logo-suns {
   background-image: url('https://upload.wikimedia.org/wikipedia/en/d/dc/Phoenix_Suns_logo.svg');
-  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.team-logo-knicks {
-  background-image: url('https://upload.wikimedia.org/wikipedia/en/2/25/New_York_Knicks_logo.svg');
-  opacity: 0;
-}
-
-.day-mode .team-logo-suns {
-  opacity: 0.15;
-}
-
-.night-mode .team-logo-knicks {
-  opacity: 0.12;
-}
-
-.sky-gradient {
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    var(--sky-start) 0%,
-    var(--sky-mid) 40%,
-    var(--sky-end) 100%
+    rgba(255, 248, 240, 0.75) 0%,
+    rgba(255, 245, 232, 0.85) 100%
   );
-  transition: background 0.8s ease;
-}
-
-.day-mode .sky-gradient::after {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255, 220, 100, 0.9) 0%, rgba(255, 180, 50, 0.4) 50%, transparent 70%);
-  border-radius: 50%;
-  animation: sun-pulse 4s ease-in-out infinite;
-}
-
-.night-mode .sky-gradient::after {
-  content: '';
-  position: absolute;
-  top: 12%;
-  right: 20%;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(230, 230, 255, 0.95) 0%, rgba(200, 200, 255, 0.3) 40%, transparent 70%);
-  border-radius: 50%;
-  box-shadow: 0 0 60px rgba(200, 200, 255, 0.5);
-}
-
-@keyframes sun-pulse {
-  0%, 100% { opacity: 0.9; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  pointer-events: none;
 }
 
 .floating-shapes {
