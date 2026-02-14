@@ -4,7 +4,7 @@
    ======================================== */
 
 :root {
-  /* Day mode - Phoenix Suns inspired (sun logo) */
+  /* Day mode - Phoenix Suns (sun logo) */
   --bg-primary: #fdf9f4;
   --bg-secondary: #fff8f0;
   --bg-card: #ffffff;
@@ -22,7 +22,7 @@
 }
 
 body.night-mode {
-  /* Night mode - New York Knicks inspired */
+  /* Night mode - New York Knicks */
   --bg-primary: #0a1628;
   --bg-secondary: #0d1f38;
   --bg-card: #12263d;
