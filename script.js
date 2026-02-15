@@ -7,18 +7,22 @@
     document.body.classList.toggle('night-mode', isNight);
     document.body.classList.toggle('day-mode', !isNight);
 
-    // Click ball to expand/collapse interest panel
     document.querySelectorAll('.interest-ball').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var panelId = btn.getAttribute('data-panel');
         var panel = document.getElementById(panelId);
-        var isOpen = panel.classList.contains('is-open');
+        var isRolledRight = btn.classList.contains('rolled-right');
 
-        if (isOpen) {
+        if (isRolledRight) {
+          btn.classList.remove('rolled-right');
           panel.classList.remove('is-open');
           panel.setAttribute('hidden', '');
           btn.setAttribute('aria-expanded', 'false');
+          document.body.classList.toggle('night-mode');
+          document.body.classList.toggle('day-mode');
+          localStorage.setItem('theme', document.body.classList.contains('night-mode') ? 'night' : 'day');
         } else {
+          btn.classList.add('rolled-right');
           panel.classList.add('is-open');
           panel.removeAttribute('hidden');
           btn.setAttribute('aria-expanded', 'true');
@@ -26,7 +30,6 @@
       });
     });
 
-    // Smooth reveal on scroll
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -43,8 +46,7 @@
       observer.observe(el);
     });
 
-    var playerCards = document.querySelectorAll('.player-card, .player-image-only');
-    playerCards.forEach(function (el) {
+    document.querySelectorAll('.player-card, .player-image-only').forEach(function (el) {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
