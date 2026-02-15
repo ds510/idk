@@ -14,6 +14,26 @@
   --sky-start: #ffd89b;
   --sky-mid: #ffe8c5;
   --sky-end: #fff5e8;
+  /* Rack/ball (work in both themes) */
+  --rack-pole: #4a3d6b;
+  --ball-stripe: #1d1160;
+}
+
+/* Night theme: applied when body has .night-mode */
+body.night-mode {
+  --bg-primary: #1a1625;
+  --bg-secondary: #221c30;
+  --bg-card: #2a2438;
+  --text-primary: #f0ebf5;
+  --text-secondary: #c9c0d8;
+  --text-muted: #9d92b0;
+  --accent: #e56020;
+  --accent-soft: #3d2a20;
+  --border: rgba(240, 235, 245, 0.1);
+  --shadow: rgba(0, 0, 0, 0.25);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+  --rack-pole: #9d92b0;
+  --ball-stripe: #f0ebf5;
 }
 
 * {
@@ -62,6 +82,15 @@ body {
     rgba(255, 245, 232, 0.85) 100%
   );
   pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+body.night-mode .hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 22, 37, 0.85) 0%,
+    rgba(34, 28, 48, 0.9) 100%
+  );
 }
 
 .floating-shapes {
@@ -176,9 +205,9 @@ section {
   top: 0;
   bottom: 0;
   width: 6px;
-  background: linear-gradient(180deg, var(--text-muted) 0%, var(--text-primary) 100%);
+  background: linear-gradient(180deg, var(--rack-pole) 0%, var(--text-primary) 100%);
   border-radius: 3px;
-  box-shadow: 1px 0 4px rgba(0,0,0,0.15);
+  box-shadow: 1px 0 4px var(--shadow);
 }
 
 /* Horizontal bar (shelf) under each ball */
@@ -189,10 +218,10 @@ section {
   top: 50%;
   width: 52px;
   height: 8px;
-  background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-muted) 100%);
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--rack-pole) 100%);
   border-radius: 4px;
   transform: translateY(-50%);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
 /* Basketball */
@@ -235,7 +264,7 @@ section {
   overflow: hidden;
 }
 
-/* Basketball lines (curved stripe look) */
+/* Basketball lines (curved stripe look) – use theme-aware colour */
 .ball-inner::before,
 .ball-inner::after {
   content: '';
@@ -244,7 +273,7 @@ section {
   top: 50%;
   width: 120%;
   height: 4px;
-  background: var(--text-primary);
+  background: var(--ball-stripe);
   border-radius: 2px;
   transform-origin: center;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
@@ -540,6 +569,34 @@ h2 {
 .player-info p {
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* Footer */

@@ -2,6 +2,30 @@
 (function () {
   'use strict';
 
+  // Day/night theme: apply saved preference and toggle on button click
+  (function initTheme() {
+    var saved = localStorage.getItem('theme');
+    var isNight = saved === 'night' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.body.classList.toggle('night-mode', isNight);
+    document.body.classList.toggle('day-mode', !isNight);
+    updateThemeToggleLabel();
+  })();
+
+  function updateThemeToggleLabel() {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.textContent = document.body.classList.contains('night-mode') ? '☀️' : '🌙';
+  }
+
+  document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.body.classList.toggle('night-mode');
+      document.body.classList.toggle('day-mode');
+      localStorage.setItem('theme', document.body.classList.contains('night-mode') ? 'night' : 'day');
+      updateThemeToggleLabel();
+    });
+  });
+
   // Basketball rack: click ball to expand/collapse panel
   document.querySelectorAll('.ball').forEach(function (btn) {
     btn.addEventListener('click', function () {
