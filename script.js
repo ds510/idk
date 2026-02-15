@@ -11,9 +11,9 @@
       btn.addEventListener('click', function () {
         var panelId = btn.getAttribute('data-panel');
         var panel = document.getElementById(panelId);
-        var isRolledRight = btn.classList.contains('rolled-right');
+        var isOnRight = btn.classList.contains('rolled-right');
 
-        if (isRolledRight) {
+        if (isOnRight) {
           btn.classList.remove('rolled-right');
           panel.classList.remove('is-open');
           panel.setAttribute('hidden', '');
