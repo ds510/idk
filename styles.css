@@ -124,6 +124,182 @@ section {
   transition: background 0.6s ease;
 }
 
+/* Rack section: about + interests */
+.rack-section {
+  background: var(--bg-secondary);
+  padding: 3rem 1.5rem 4rem;
+}
+
+.container--rack {
+  max-width: 900px;
+}
+
+.talm-bout-me {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.talm-bout-me h2 {
+  margin-bottom: 0.5rem;
+}
+
+.talm-bout-me p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
+/* Basketball rack: 5 levels */
+.rack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.rack-level {
+  display: flex;
+  align-items: stretch;
+  min-height: 88px;
+  position: relative;
+}
+
+/* Vertical pole (left edge of rack) */
+.rack-level::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--text-muted) 0%, var(--text-primary) 100%);
+  border-radius: 3px;
+  box-shadow: 1px 0 4px rgba(0,0,0,0.15);
+}
+
+/* Horizontal bar (shelf) under each ball */
+.rack-level::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 52px;
+  height: 8px;
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-muted) 100%);
+  border-radius: 4px;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Basketball */
+.ball {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  margin: 16px 0 16px 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.ball:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.ball:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.ball-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb347, #e85a1a 40%, #c44a14);
+  box-shadow:
+    inset -4px -4px 12px rgba(0,0,0,0.2),
+    inset 4px 4px 10px rgba(255,255,255,0.25),
+    0 6px 16px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Basketball lines (curved stripe look) */
+.ball-inner::before,
+.ball-inner::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  height: 4px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transform-origin: center;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+.ball-inner::before {
+  transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+.ball-inner::after {
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+/* Expandable panel to the right of the ball */
+.rack-panel {
+  flex: 1;
+  min-width: 0;
+  margin-left: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: 0 4px 20px var(--shadow);
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease, margin 0.35s ease;
+}
+
+.rack-panel.is-open {
+  max-width: 600px;
+  opacity: 1;
+}
+
+.rack-panel-inner {
+  padding: 1.25rem 1.5rem;
+  white-space: normal;
+  min-width: 280px;
+}
+
+.rack-panel-inner h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.rack-panel-inner p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
 .about {
   background: var(--bg-secondary);
   padding-top: 2.5rem;
@@ -402,5 +578,17 @@ h2 {
 
   .interests-grid {
     grid-template-columns: 1fr;
+  }
+
+  .rack-section {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .rack-panel.is-open {
+    max-width: 100%;
+  }
+
+  .rack-panel-inner {
+    min-width: 0;
   }
 }

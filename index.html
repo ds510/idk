@@ -26,54 +26,77 @@
     </div>
   </header>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-box">
+  <!-- About + Interests: basketball rack -->
+  <section class="rack-section" id="about">
+    <div class="container container--rack">
+      <!-- "talm bout me" at top of rack -->
+      <div class="talm-bout-me">
         <h2>talm bout me?</h2>
         <p>I'm studying Actuarial Studies and Computer Science at UNSW in my second year. Its been pretty cooked, but I'm still enjoying the journey.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Interests Section -->
-  <section class="interests" id="interests">
-    <div class="container">
-      <h2>Interests</h2>
-      <!-- <p class="section-subtitle"> interetsing things</p> -->
-      <div class="interests-grid">
-        <article class="interest-card">
-          <div class="interest-content">
-            <h3>Eating and Food</h3>
-            <p>I like cooking, especially trying new recipes with friends. But I love the food the most, and eating it.</p>
+      <!-- 5-level basketball rack -->
+      <div class="rack" role="list" aria-label="Interests">
+        <!-- Level 1 -->
+        <div class="rack-level" role="listitem">
+          <button type="button" class="ball" aria-expanded="false" aria-controls="panel-1" id="ball-1" data-panel="panel-1">
+            <span class="ball-inner"></span>
+          </button>
+          <div class="rack-panel" id="panel-1" aria-labelledby="ball-1" hidden>
+            <div class="rack-panel-inner">
+              <h3>Eating and Food</h3>
+              <p>I like cooking, especially trying new recipes with friends. But I love the food the most, and eating it.</p>
+            </div>
           </div>
-        </article>
-        <article class="interest-card">
-          <div class="interest-content">
-            <h3>Poker</h3>
-            <p>A lot of my friends have been playing poker for ages, and I only recently have started playing. I just play friendly games with them.</p>
+        </div>
+        <!-- Level 2 -->
+        <div class="rack-level" role="listitem">
+          <button type="button" class="ball" aria-expanded="false" aria-controls="panel-2" id="ball-2" data-panel="panel-2">
+            <span class="ball-inner"></span>
+          </button>
+          <div class="rack-panel" id="panel-2" aria-labelledby="ball-2" hidden>
+            <div class="rack-panel-inner">
+              <h3>Poker</h3>
+              <p>A lot of my friends have been playing poker for ages, and I only recently have started playing. I just play friendly games with them.</p>
+            </div>
           </div>
-        </article>
-        <article class="interest-card">
-          <div class="interest-content">
-            <h3>Running</h3>
-            <p>I've been running for about 2 months as of now, so far it's pretty fun. The main motivation for running is so that I can eat more yummy food</p>
+        </div>
+        <!-- Level 3 -->
+        <div class="rack-level" role="listitem">
+          <button type="button" class="ball" aria-expanded="false" aria-controls="panel-3" id="ball-3" data-panel="panel-3">
+            <span class="ball-inner"></span>
+          </button>
+          <div class="rack-panel" id="panel-3" aria-labelledby="ball-3" hidden>
+            <div class="rack-panel-inner">
+              <h3>Running</h3>
+              <p>I've been running for about 2 months as of now, so far it's pretty fun. The main motivation for running is so that I can eat more yummy food</p>
+            </div>
           </div>
-        </article>
-        <article class="interest-card">
-          <div class="interest-content">
-            <h3>Music</h3>
-            <p> I love music, both listening to and playing. I used to play the trumpet when I was younger, but quit. I really want to learn piano though. I like to listen 
-              various genres, my favourites being hardstyle, rap, rnb. 
-            </p>
+        </div>
+        <!-- Level 4 -->
+        <div class="rack-level" role="listitem">
+          <button type="button" class="ball" aria-expanded="false" aria-controls="panel-4" id="ball-4" data-panel="panel-4">
+            <span class="ball-inner"></span>
+          </button>
+          <div class="rack-panel" id="panel-4" aria-labelledby="ball-4" hidden>
+            <div class="rack-panel-inner">
+              <h3>Music</h3>
+              <p>I love music, both listening to and playing. I used to play the trumpet when I was younger, but quit. I really want to learn piano though. I like to listen to various genres, my favourites being hardstyle, rap, rnb.</p>
+            </div>
           </div>
-        </article>
-        <article class="interest-card">
-          <div class="interest-content">
-            <h3>Basketball</h3>
-            <p> This my favourite sport. I play volleyball as well sometimes, but basketball is too peak. I like playing pick up with my friends at local rec centres.</p>
+        </div>
+        <!-- Level 5 -->
+        <div class="rack-level" role="listitem">
+          <button type="button" class="ball" aria-expanded="false" aria-controls="panel-5" id="ball-5" data-panel="panel-5">
+            <span class="ball-inner"></span>
+          </button>
+          <div class="rack-panel" id="panel-5" aria-labelledby="ball-5" hidden>
+            <div class="rack-panel-inner">
+              <h3>Basketball</h3>
+              <p>This my favourite sport. I play volleyball as well sometimes, but basketball is too peak. I like playing pick up with my friends at local rec centres.</p>
+            </div>
           </div>
-        </article>
+        </div>
       </div>
 
       <!-- Favourite Players Link -->
